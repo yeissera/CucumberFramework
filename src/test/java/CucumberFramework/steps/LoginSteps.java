@@ -1,13 +1,14 @@
 package CucumberFramework.steps;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -18,45 +19,59 @@ public class LoginSteps {
 	WebDriver driver;
 
 	@Before()
-	public void setup() {
-		System.setProperty("webdriver.gecko.driver","D:\\Google Drive\\PROYECTOS\\CucumberFramework\\CucumberFramework\\src\\test\\java\\CucumberFramework\\resources\\geckodriver.exe");
+	public void setup() throws IOException{
+		System.setProperty("webdriver.gecko.driver",Paths.get(System.getProperty("user.dir")).toRealPath() + "\\src\\test\\java\\CucumberFramework\\resources\\chromedriver.exe");
 		this.driver = new FirefoxDriver();
 		this.driver.manage().window().maximize();
-		this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+	}
+	@Given("^I access webdriveruniversity$")
+	public void i_access_webdriveruniversity() throws Throwable {
+	    driver.get("http://webdriveruniversity.com");
 	}
 
-	@Given("^User navigates to stackoverflow website$")
-	public void user_navigates_to_stackoverflow_website() throws Throwable {
-		driver.get("https://stackoverflow.com/");
+	@When("^I click on the login portal button$")
+	public void i_click_on_the_login_portal_button() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.findElement(By.id("login-portal")).click();
 	}
 
-	@Given("^User clicks on the login button on homepage$")
-	public void user_clicks_on_the_login_button_on_homepage() throws Throwable {
-		driver.findElement(By.xpath("/html/body/header/div/ol[2]/li[2]/a[1]")).click();
+	@When("^I enter a username$")
+	public void i_enter_a_username() throws Throwable {
+	    // Store the current windows handle
+		 @SuppressWarnings("unused")
+		String winHandleBefore=driver.getWindowHandle();
+		//Perform the click operation that opens new window
+		//Switch to new opened
+		for(String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+		driver.findElement(By.id("text")).sendKeys("Tom");
 	}
 
-	@Given("^User enters a correct username$")
-	public void user_enters_a_correct_username() throws Throwable {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("yeisser@gmail.com");
+	@When("^I enter a \"([^\"]*)\" password$")
+	public void i_enter_a_password(String password) throws Throwable {
+	    driver.findElement(By.id("password")).sendKeys(password);
 	}
 
-	@Given("^User enters a correct password$")
-	public void user_enters_a_correct_password() throws Throwable {
-		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("1q2w3e4r");
+	@When("^I click on the login button$")
+	public void i_click_on_the_login_button() throws Throwable {
+	    driver.findElement(By.id("login-button")).click();
 	}
 
-	@When("^User clicks on the login button$")
-	public void user_clicks_on_the_login_button() throws Throwable {
-		driver.findElement(By.xpath(".//*[@id=\"submit-button\"]")).click();
+	@Then("^I should be presented with a succesfful validation alert$")
+	public void i_should_be_presented_with_a_succesfful_validation_alert() throws Throwable {
+		Alert alert=driver.switchTo().alert();
+	    System.out.println(alert.getText());
+	    Assert.assertEquals("validation failed666", alert.getText());
 	}
-
-	@Then("^User should be taken to the successful login page$")
-	public void user_should_be_taken_to_the_successful_login_page() throws Throwable {
-		Thread.sleep(5000);
-		WebElement askQuestionButton = driver.findElement(By.xpath("//a[contains(text(), 'Ask Question']"));
-		Assert.assertEquals(true, askQuestionButton.isDisplayed());
+	
+	@Then("^I should be presented with a unsuccessful validation alert$")
+	public void i_should_be_presented_with_a_unsuccessful_validation_alert() throws Throwable {
+		Alert alert=driver.switchTo().alert();
+		System.out.println(alert.getText());
+		//actual expects
+		Assert.assertEquals("validation failed", alert.getText());
 	}
-
 	
 }
