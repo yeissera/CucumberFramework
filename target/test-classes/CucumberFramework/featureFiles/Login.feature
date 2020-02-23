@@ -13,4 +13,4 @@ Scenario: Login account with a valid password
 Scenario: Login account with a invalid password
 	And I enter a "invalid" password
 	When I click on the login button
-	Then I should be presented with a unsuccesfful validation alert  
+	Then I should be presented with a unsuccesfful validation alert
