@@ -8,8 +8,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -19,14 +21,29 @@ import cucumber.api.java.en.When;
 public class ContactUsSteps {
 	WebDriver driver;
 	
-	@Before() 
-	public void setup() throws IOException {
+	@Before("@live")
+	public void setupChrome() throws IOException {
 		System.setProperty("webdriver.chrome.driver", Paths.get(System.getProperty("user.dir")).toRealPath() +  "\\src\\test\\java\\CucumberFramework\\resources\\chromedriver.exe");
 		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
-		this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 	}
 	
+	
+	@Before("@staging")
+	public void setupFirefox() throws IOException {
+		System.setProperty("webdriver.gecko.driver", Paths.get(System.getProperty("user.dir")).toRealPath() +  "\\src\\test\\java\\CucumberFramework\\resources\\geckodriver.exe");
+		this.driver = new FirefoxDriver();
+		this.driver.manage().window().maximize();
+		this.driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+	}
+	
+	@After()
+	public void tearDown() {
+		driver.manage().deleteAllCookies();
+		driver.quit();
+	}
+
 	@Given("^I access webdriveruniversity$")
 	public void i_access_webdriveruniversity() throws Throwable {
 		driver.get("http://www.webdriveruniversity.com");
@@ -39,42 +56,43 @@ public class ContactUsSteps {
 
 	@And("^I enter a valid first name$")
 	public void i_enter_a_valid_first_name() throws Throwable {
-	    //Store the current window handle
+		// Store the current window handle
 		@SuppressWarnings("unused")
 		String winHandleBefore = driver.getWindowHandle();
-		//Perform the click operation that opens new window
-		//Swith to new window opened
+		// Perform the click operation that opens new window
+		// Switch to new window opened
 		for (String winHandle : driver.getWindowHandles()) {
-		driver.switchTo().window(winHandle);
+			driver.switchTo().window(winHandle);
 		}
+
 		driver.findElement(By.cssSelector("input[name='first_name']")).sendKeys("Tom");
 	}
 
 	@And("^I enter a valid last name$")
-	public void i_enter_a_valid_last_name(DataTable table) throws Throwable {
-		List<List<String>> data = table.raw();		
-	    driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys(data.get(0).get(2));
+	public void i_enter_a_valid_last_name(DataTable table) throws Throwable { 
+		List<List<String>> data = table.raw();
+		driver.findElement(By.cssSelector("input[name='last_name']")).sendKeys(data.get(0).get(1));
 	}
 
 	@And("^I enter a valid email address$")
 	public void i_enter_a_valid_email_address() throws Throwable {
-	    driver.findElement(By.cssSelector("input[name='email']")).sendKeys("webdriveruniversity@outlook.com");
+		driver.findElement(By.cssSelector("input[name='email']")).sendKeys("webdriverunivesity@outlook.com");
 	}
 
 	@And("^I enter comments$")
 	public void i_enter_comments(DataTable arg1) throws Throwable {
-	    List<List<String>> data = arg1.raw();
-	    driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys(data.get(0).get(0) + "\n");
-	    driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys(data.get(0).get(1));
+		List<List<String>> data = arg1.raw();
+		driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys(data.get(1).get(0) + "\n"); //comment one
+		driver.findElement(By.cssSelector("textarea[name='message']")).sendKeys(data.get(1).get(1)); //comment two
 	}
 
 	@When("^I click on the submit button$")
 	public void i_click_on_the_submit_button() throws Throwable {
-	   driver.findElement(By.cssSelector("input[value='SUBMIT']")).click();
+		driver.findElement(By.cssSelector("input[value='SUBMIT']")).click();
 	}
 
 	@Then("^the information should successfully be submitted via the contact us form$")
 	public void the_information_should_successfully_be_submitted_via_the_contact_us_form() throws Throwable {
-	    //driver.findElement(By.cssSelector("input[value=\"SUBMIT\"]")).click();
+		//driver.findElement(By.cssSelector("input[value=\"SUBMIT\"]")).click();
 	}
 }

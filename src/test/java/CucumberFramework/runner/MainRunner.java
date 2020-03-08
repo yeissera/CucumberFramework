@@ -10,7 +10,8 @@ import cucumber.api.CucumberOptions;
 		features = {"src/test/java/CucumberFramework/featureFiles/"},
 		glue = {"CucumberFramework.steps"},
 		monochrome = true,
-		tags = {},
+		dryRun=false,
+		tags = {"@live"},
 		plugin = {"pretty", "html:target/cucumber","json:target/cucumber.json", "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"}
 		)
 

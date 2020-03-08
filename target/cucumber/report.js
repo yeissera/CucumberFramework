@@ -1,199 +1,307 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("ContactUs.feature");
 formatter.feature({
-  "line": 1,
-  "name": "Login to account at webdriverunivsity.com using login portal",
+  "line": 2,
+  "name": "Submit data to webdriveruniversity.com using contact us form",
   "description": "",
-  "id": "login-to-account-at-webdriverunivsity.com-using-login-portal",
-  "keyword": "Feature"
+  "id": "submit-data-to-webdriveruniversity.com-using-contact-us-form",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "line": 1,
+      "name": "@important"
+    }
+  ]
 });
 formatter.before({
-  "duration": 5712527100,
+  "duration": 8014251900,
   "status": "passed"
 });
-formatter.background({
-  "line": 3,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Background"
-});
-formatter.step({
-  "line": 4,
-  "name": "I access webdriverunivsity.com",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 5,
-  "name": "I click on the login portal button",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 6,
-  "name": "I enter a username",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginSteps.i_access_webdriverunivsity_com()"
-});
-formatter.result({
-  "duration": 4921894400,
+formatter.before({
+  "duration": 3608994400,
   "status": "passed"
-});
-formatter.match({
-  "location": "LoginSteps.i_click_on_the_login_portal_button()"
-});
-formatter.result({
-  "duration": 303748300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "LoginSteps.i_enter_a_username()"
-});
-formatter.result({
-  "duration": 1243579400,
-  "error_message": "org.openqa.selenium.WebDriverException: unknown error: call function result missing \u0027value\u0027\n  (Session info: chrome\u003d80.0.3987.106)\n  (Driver info: chromedriver\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform\u003dWindows NT 6.2.9200 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027ANUBISMIC\u0027, ip: \u0027192.168.0.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f), userDataDir\u003dC:\\Users\\YEISSER\\AppData\\Local\\Temp\\scoped_dir18424_26215}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d80.0.3987.106, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: c0010c0927ab6fe94b718292f5b4a8c3\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)\r\n\tat CucumberFramework.steps.LoginSteps.i_enter_a_username(LoginSteps.java:48)\r\n\tat ✽.And I enter a username(Login.feature:6)\r\n",
-  "status": "failed"
 });
 formatter.scenario({
-  "line": 8,
-  "name": "Login account with a valid password",
+  "line": 4,
+  "name": "Submit valid data via contact us form",
   "description": "",
-  "id": "login-to-account-at-webdriverunivsity.com-using-login-portal;login-account-with-a-valid-password",
+  "id": "submit-data-to-webdriveruniversity.com-using-contact-us-form;submit-valid-data-via-contact-us-form",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 9,
-  "name": "I enter a \"webdriver123\" password",
+  "line": 5,
+  "name": "I access webdriveruniversity",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "I click on the contact us button",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 7,
+  "name": "I enter a valid first name",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "I enter a valid last name",
+  "rows": [
+    {
+      "cells": [
+        "woods",
+        "jackson",
+        "jones"
+      ],
+      "line": 9
+    }
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "I click on the login button",
-  "keyword": "When "
+  "name": "I enter a valid email address",
+  "keyword": "And "
 });
 formatter.step({
   "line": 11,
-  "name": "I should be presented with a succesfful validation alert",
-  "keyword": "Then "
-});
-formatter.match({
-  "arguments": [
+  "name": "I enter comments",
+  "rows": [
     {
-      "val": "webdriver123",
-      "offset": 11
+      "cells": [
+        "example comment one",
+        "example comment two"
+      ],
+      "line": 12
+    },
+    {
+      "cells": [
+        "exaaple comment three",
+        "example commentfour"
+      ],
+      "line": 13
     }
   ],
-  "location": "LoginSteps.i_enter_a_password(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "LoginSteps.i_click_on_the_login_button()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.match({
-  "location": "LoginSteps.i_should_be_presented_with_a_succesfful_validation_alert()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.before({
-  "duration": 3606058100,
-  "status": "passed"
-});
-formatter.background({
-  "line": 3,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Background"
+  "keyword": "And "
 });
 formatter.step({
-  "line": 4,
-  "name": "I access webdriverunivsity.com",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 5,
-  "name": "I click on the login portal button",
+  "line": 14,
+  "name": "I click on the submit button",
   "keyword": "When "
 });
 formatter.step({
-  "line": 6,
-  "name": "I enter a username",
-  "keyword": "And "
+  "line": 15,
+  "name": "the information should successfully be submitted via the contact us form",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginSteps.i_access_webdriverunivsity_com()"
+  "location": "ContactUsSteps.i_access_webdriveruniversity()"
 });
 formatter.result({
-  "duration": 3170111400,
+  "duration": 13204996000,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_click_on_the_login_portal_button()"
+  "location": "ContactUsSteps.i_click_on_the_contact_us_button()"
 });
 formatter.result({
-  "duration": 487101700,
+  "duration": 508988000,
   "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_enter_a_username()"
+  "location": "ContactUsSteps.i_enter_a_valid_first_name()"
 });
 formatter.result({
-  "duration": 1508122800,
-  "error_message": "org.openqa.selenium.WebDriverException: unknown error: call function result missing \u0027value\u0027\n  (Session info: chrome\u003d80.0.3987.106)\n  (Driver info: chromedriver\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform\u003dWindows NT 6.2.9200 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.6.0\u0027, revision: \u00276fbf3ec767\u0027, time: \u00272017-09-27T15:28:36.4Z\u0027\nSystem info: host: \u0027ANUBISMIC\u0027, ip: \u0027192.168.0.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities [{mobileEmulationEnabled\u003dfalse, hasTouchScreen\u003dfalse, platform\u003dXP, acceptSslCerts\u003dtrue, webStorageEnabled\u003dtrue, browserName\u003dchrome, takesScreenshot\u003dtrue, javascriptEnabled\u003dtrue, platformName\u003dXP, setWindowRect\u003dtrue, unexpectedAlertBehaviour\u003d, applicationCacheEnabled\u003dfalse, rotatable\u003dfalse, networkConnectionEnabled\u003dfalse, chrome\u003d{chromedriverVersion\u003d2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f), userDataDir\u003dC:\\Users\\YEISSER\\AppData\\Local\\Temp\\scoped_dir18888_12833}, takesHeapSnapshot\u003dtrue, pageLoadStrategy\u003dnormal, unhandledPromptBehavior\u003d, databaseEnabled\u003dfalse, handlesAlerts\u003dtrue, version\u003d80.0.3987.106, browserConnectionEnabled\u003dfalse, nativeEvents\u003dtrue, locationContextEnabled\u003dtrue, cssSelectorsEnabled\u003dtrue}]\nSession ID: 1798e8e25dc708eb38a1ddd9f7a69f46\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)\r\n\tat CucumberFramework.steps.LoginSteps.i_enter_a_username(LoginSteps.java:48)\r\n\tat ✽.And I enter a username(Login.feature:6)\r\n",
-  "status": "failed"
+  "duration": 1595431400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_a_valid_last_name(DataTable)"
+});
+formatter.result({
+  "duration": 172428600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_a_valid_email_address()"
+});
+formatter.result({
+  "duration": 370710100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_comments(DataTable)"
+});
+formatter.result({
+  "duration": 684504800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_click_on_the_submit_button()"
+});
+formatter.result({
+  "duration": 2548306500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.the_information_should_successfully_be_submitted_via_the_contact_us_form()"
+});
+formatter.result({
+  "duration": 24300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 767863200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 805311400,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3783065600,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3668593600,
+  "status": "passed"
 });
 formatter.scenario({
-  "line": 13,
-  "name": "Login account with a invalid password",
+  "line": 17,
+  "name": "Submit valid data via contact us form",
   "description": "",
-  "id": "login-to-account-at-webdriverunivsity.com-using-login-portal;login-account-with-a-invalid-password",
+  "id": "submit-data-to-webdriveruniversity.com-using-contact-us-form;submit-valid-data-via-contact-us-form",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 14,
-  "name": "I enter a \"invalid\" password",
-  "keyword": "And "
+  "line": 18,
+  "name": "I access webdriveruniversity",
+  "keyword": "Given "
 });
 formatter.step({
-  "line": 15,
-  "name": "I click on the login button",
+  "line": 19,
+  "name": "I click on the contact us button",
   "keyword": "When "
 });
 formatter.step({
-  "line": 16,
-  "name": "I should be presented with a unsuccesfful validation alert",
+  "line": 20,
+  "name": "I enter a valid first name",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "I enter a valid last name",
+  "rows": [
+    {
+      "cells": [
+        "gates",
+        "bill",
+        "bruno"
+      ],
+      "line": 22
+    }
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "I enter a valid email address",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
+  "name": "I enter comments",
+  "rows": [
+    {
+      "cells": [
+        "example comment five",
+        "example comment six"
+      ],
+      "line": 25
+    },
+    {
+      "cells": [
+        "exaaple comment seven",
+        "example comment eight"
+      ],
+      "line": 26
+    }
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 27,
+  "name": "I click on the submit button",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 28,
+  "name": "the information should successfully be submitted via the contact us form",
   "keyword": "Then "
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "invalid",
-      "offset": 11
-    }
-  ],
-  "location": "LoginSteps.i_enter_a_password(String)"
+  "location": "ContactUsSteps.i_access_webdriveruniversity()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 7319337400,
+  "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_click_on_the_login_button()"
+  "location": "ContactUsSteps.i_click_on_the_contact_us_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 376528200,
+  "status": "passed"
 });
 formatter.match({
-  "location": "LoginSteps.i_should_be_presented_with_a_unsuccesfful_validation_alert()"
+  "location": "ContactUsSteps.i_enter_a_valid_first_name()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2441579400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_a_valid_last_name(DataTable)"
+});
+formatter.result({
+  "duration": 198514900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_a_valid_email_address()"
+});
+formatter.result({
+  "duration": 439336300,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_enter_comments(DataTable)"
+});
+formatter.result({
+  "duration": 554463700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.i_click_on_the_submit_button()"
+});
+formatter.result({
+  "duration": 2755117200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ContactUsSteps.the_information_should_successfully_be_submitted_via_the_contact_us_form()"
+});
+formatter.result({
+  "duration": 43200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 664443000,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 600766700,
+  "status": "passed"
 });
 });
